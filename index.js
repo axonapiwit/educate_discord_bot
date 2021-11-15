@@ -1,9 +1,9 @@
-// const express = require("express");
-// const app = express();
-
-// app.listen(process.env.PORT || 3000, () => {
-//     console.log("Server is ready.");
-// })
+const express = require("express");
+const app = express();
+console.log(process.env.PORT);
+app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
+    console.log("Server is ready.");
+})
 const {
     Client,
     Intents
@@ -49,5 +49,5 @@ client.on('messageCreate', msg => {
         }
     }
 })
-console.log(process.env.TOKEN)
+
 client.login(process.env.TOKEN)
