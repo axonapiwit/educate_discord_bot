@@ -18,6 +18,9 @@ const client = new Client({
         Intents.FLAGS.GUILD_MESSAGES,
     ]
 });
+client.user.setActivity('Visual Studio Code', {
+    type: 'PLAYING'
+})
 
 client.on('ready', () => {
     console.log('your bot is ready')
