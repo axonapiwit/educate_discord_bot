@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-console.log(process.env.PORT);
+
 app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
     console.log("Server is ready.");
 })
@@ -18,17 +18,16 @@ const client = new Client({
         Intents.FLAGS.GUILD_MESSAGES,
     ]
 });
-client.user.setActivity('Visual Studio Code', {
-    type: 'PLAYING'
-})
 
 client.on('ready', () => {
     console.log('your bot is ready')
+    client.user.setActivity('Visual Studio Code', {
+        type: 'PLAYING'
+    })
 })
 
 const today = new Date();
 const day = today.getDay();
-console.log(day);
 
 client.on('messageCreate', msg => {
     if (msg.content == '!help') {
