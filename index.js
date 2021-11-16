@@ -28,6 +28,7 @@ client.on('ready', () => {
 
 const today = new Date();
 const day = today.getDay();
+console.log(day);
 
 client.on('messageCreate', msg => {
     if (msg.content == '!help') {
