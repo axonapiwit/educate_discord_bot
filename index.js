@@ -50,7 +50,7 @@ client.on('messageCreate', msg => {
     }
 
     if (msg.content == '!help') {
-        return msg.reply('**!help** - Display the help menu \n \n**!study** - Schedule to day');
+        return msg.reply('**!help** - Display the help menu \n \n**!study** - Schedule to day \n**!next day** - Schedule to next day');
     }
     if (msg.content == '!next day') {
     
