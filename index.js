@@ -26,11 +26,10 @@ client.on('ready', () => {
     })
 })
 
-const today = new Date();
-const day = today.getDay();
-console.log(day);
-
 client.on('messageCreate', msg => {
+    const today = new Date();
+    const day = today.getDay();
+    console.log(day);
     if (msg.content == '!help') {
         return msg.reply('**!help** - Display the help menu \n \n**!study** - Schedule to day');
     }
