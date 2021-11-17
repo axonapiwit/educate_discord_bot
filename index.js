@@ -30,10 +30,8 @@ client.on('messageCreate', msg => {
     const today = new Date();
     const day = today.getDay();
     console.log(day);
-    if (msg.content == '!help') {
-        return msg.reply('**!help** - Display the help menu \n \n**!study** - Schedule to day');
-    }
-    if (msg.content == '!study') {
+
+    const subjects = (day) => {
         if (day == 1) {
             return msg.reply('225351[2] Computer and Network Security ความปลอดภัยบนคอมพิวเตอร์และเครือข่าย เวลา 15.00-17.00');
         }
@@ -46,10 +44,23 @@ client.on('messageCreate', msg => {
         if (day == 4) {
             return msg.reply('227474[1] Software Evolution and Maintenance วิวัฒนาการและการบำรุงรักษาซอฟต์แวร์ เวลา 13.00-16.00 \n227321[2] Software Engineering Project I โครงงานทางวิศวกรรมซอฟต์แวร์ 1 เวลา 16.00-19.00');
         }
-        if (day == 0, 5, 6) {
+        else {
             return msg.reply('ไม่มีเรียน')
         }
     }
+
+    if (msg.content == '!help') {
+        return msg.reply('**!help** - Display the help menu \n \n**!study** - Schedule to day');
+    }
+    if (msg.content == '!next day') {
+    
+        subjects(day+1);
+
+    }
+    if (msg.content == '!study') {
+        subjects(day);
+    }
+
 })
 
 client.login(process.env.TOKEN)
